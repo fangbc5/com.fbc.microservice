@@ -1,0 +1,31 @@
+server:
+  port: 40400
+  servlet:
+    context-path: /auth
+spring:
+  application:
+    name: ms-service-ucenter-auth
+  redis:
+    host: 192.168.146.129
+    port: 6379
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+loglogging.level.org.springframework.boot.autoconfigure: ERROR
+auth:
+  tokenValiditySeconds: 1200  #token存储到redis的过期时间
+  clientId: XcWebApp
+  clientSecret: XcWebApp
+  cookieDomain: java.itcast.cn
+  cookieMaxAge: -1
+encrypt:
+  key-store:
+    location: classpath:/xc.keystore
+    secret: xuechengkeystore
+    alias: xckey
+    password: xuecheng
+
+
+
+

@@ -1,0 +1,6 @@
+# 服务器配置
+server:
+  port: 34001
+spring:
+  application:
+    name: 通用服务组件

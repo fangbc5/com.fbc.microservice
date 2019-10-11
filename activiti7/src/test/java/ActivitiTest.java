@@ -1,7 +1,4 @@
-import com.alibaba.fastjson.JSON;
-import com.fbc.base.vo.BaseResponse;
 import com.fbc.ms.activiti7.Application;
-import com.fbc.ms.activiti7.controller.ActivitiController;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
 import org.junit.Test;
@@ -22,29 +19,28 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class ActivitiTest {
 
     @Autowired
-    private ActivitiController activitiController;
+    private ProcessEngine processEngine;
+
     @Test
     public void testCreateTables() {
-        ProcessEngineConfiguration configuration = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration();
-        ProcessEngine processEngine = configuration.buildProcessEngine();
         System.out.println(processEngine);
     }
 
     @Test
     public void deployTest() {
-        BaseResponse baseResponse = activitiController.deploy("deploy1", null);
-        System.out.println(JSON.toJSONString(baseResponse));
     }
 
     @Test
     public void startProcessByKeyTest() {
-        BaseResponse baseResponse = activitiController.startProcessByKey("myProcess");
-        System.out.println(JSON.toJSONString(baseResponse));
     }
 
     @Test
     public void qryTaskTest() {
-        BaseResponse baseResponse = activitiController.qryTask("myProcess:2:5745bbb3-6062-11e9-ab42-005056c00008","usertask2");
-        //System.out.println(JSON.toJSONString(baseResponse));
+    }
+
+    @Test
+    public void test1() {
+//        ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
+//        System.out.println(processEngine);
     }
 }
